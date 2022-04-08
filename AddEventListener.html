@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Na Caixa</title>
+    <style>
+        #caixa {
+            width: 150px;
+            height: 150px;
+            border: solid black;
+            background-color: #f00;
+        }
+        #bola {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: solid black;
+            background-color: rgb(63, 177, 40);
+            position: absolute;
+        }
+    </style>
+    <script>
+        // ========================== VARIAVEIS
+        
+        // ========================== FUNÇÕES
+        function msg() {
+            alert('Funcionou caboré!!');
+        }
+        function move() {
+            document.getElementById("bola").style.backgroundColor="#000";
+        }
+        function move2() {
+            document.getElementById("bola").style.backgroundColor="rgb(63, 177, 40)";
+        }
+        // ========================== EVENTOS
+        function eventos() {
+            document.getElementById("caixa").addEventListener("click", msg);
+            document.getElementById("bola").addEventListener("mouseover", move);
+            document.getElementById("bola").addEventListener("mouseout", move2);
+        }
+        
+    </script>
+</head>
+<body onload="eventos()">
+    <div id='caixa'></div>
+    <div id="bola"></div>
+</body>
+</html>
