@@ -18,7 +18,12 @@
             border-radius: 50%;
             border: solid black;
             background-color: rgb(63, 177, 40);
-            position: absolute;
+        }
+        #caixaMenor {
+            width: 150px;
+            height: 100px;
+            border: solid black;
+            background-color: #00f;
         }
     </style>
     <script>
@@ -28,17 +33,24 @@
         function msg() {
             alert('Funcionou caboré!!');
         }
-        function move() {
+        function cor() {
             document.getElementById("bola").style.backgroundColor="#000";
         }
-        function move2() {
+        function cor2() {
             document.getElementById("bola").style.backgroundColor="rgb(63, 177, 40)";
+        }
+        function move() {
+            document.getElementById("caixaMenor").style.position="absolute";
+            document.getElementById("caixaMenor").style.left=Math.random()*500 +"px";
+            document.getElementById("caixaMenor").style.top=Math.random()*500 +"px";
         }
         // ========================== EVENTOS
         function eventos() {
             document.getElementById("caixa").addEventListener("click", msg);
-            document.getElementById("bola").addEventListener("mouseover", move);
-            document.getElementById("bola").addEventListener("mouseout", move2);
+            document.getElementById("bola").addEventListener("mouseover", cor);
+            document.getElementById("bola").addEventListener("mouseout", cor2);
+            document.getElementById("caixaMenor").addEventListener("mouseover", move);
+            
         }
         
     </script>
@@ -46,5 +58,6 @@
 <body onload="eventos()">
     <div id='caixa'></div>
     <div id="bola"></div>
+    <div id="caixaMenor"></div>
 </body>
 </html>
