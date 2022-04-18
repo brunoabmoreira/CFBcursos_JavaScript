@@ -25,39 +25,72 @@
             border: solid black;
             background-color: #00f;
         }
+        #caixaDeCores {
+            width: 150px;
+            height: 150px;
+            border: solid black;
+            background-color: #FFF;
+        }
     </style>
     <script>
-        // ========================== VARIAVEIS
-        
-        // ========================== FUNÇÕES
+        // ========================== VARIAVEIS =========================
+        var rgb;
+        // ========================== FUNÇÕES ===========================
+        //-----------clica e dá um alerta--------------------------
         function msg() {
             alert('Funcionou caboré!!');
         }
+         //-----------põe o mouse em cima e muda cor---------------
         function cor() {
             document.getElementById("bola").style.backgroundColor="#000";
         }
         function cor2() {
             document.getElementById("bola").style.backgroundColor="rgb(63, 177, 40)";
         }
+         //-----------passa o mouse em cima e a div se move---------
         function move() {
             document.getElementById("caixaMenor").style.position="absolute";
             document.getElementById("caixaMenor").style.left=Math.random()*500 +"px";
             document.getElementById("caixaMenor").style.top=Math.random()*500 +"px";
         }
-        // ========================== EVENTOS
+        //-------clica para liberar a movimentação da div azul-------
+        function liberouMover() {
+            alert("Tente clicar no quadrado azul!!")
+            document.getElementById("caixaMenor").addEventListener("mouseover", move);
+        }
+        //--------cria a mudança automática de cores-------------
+        function iniciar() {
+            rgb = setInterval(mudaCor, 100);
+        }
+
+        function parar() {
+            rgb = clearInterval(rgb);
+        }
+
+        function mudaCor() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            document.getElementById("caixaDeCores").style.backgroundColor="rgb("+r+","+g+","+b+")"
+        }
+        // ========================== EVENTOS DO LOAD
         function eventos() {
             document.getElementById("caixa").addEventListener("click", msg);
             document.getElementById("bola").addEventListener("mouseover", cor);
             document.getElementById("bola").addEventListener("mouseout", cor2);
-            document.getElementById("caixaMenor").addEventListener("mouseover", move);
-            
+            document.getElementById("iniciarMover").addEventListener("click", liberouMover);
+            document.getElementById("iniciarCor").addEventListener("click", iniciar);
+            document.getElementById("pararCor").addEventListener("click", parar);
         }
-        
     </script>
 </head>
 <body onload="eventos()">
     <div id='caixa'></div>
     <div id="bola"></div>
     <div id="caixaMenor"></div>
+    <button id="iniciarMover">Iniciar</button>
+    <div id="caixaDeCores"></div>
+    <button id="iniciarCor">Iniciar</button>
+    <button id="pararCor">Parar</button>
 </body>
 </html>
