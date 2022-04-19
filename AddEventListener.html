@@ -7,12 +7,15 @@
     <title>Eventos Na Caixa</title>
     <style>
         #caixa {
+            position: relative;
+            left: 40%;
             width: 150px;
             height: 150px;
             border: solid black;
             background-color: #f00;
         }
         #bola {
+            position: relative;
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -20,16 +23,24 @@
             background-color: rgb(63, 177, 40);
         }
         #caixaMenor {
+            position: relative;
             width: 150px;
             height: 100px;
             border: solid black;
             background-color: #00f;
         }
         #caixaDeCores {
+            position: relative;
             width: 150px;
             height: 150px;
             border: solid black;
             background-color: #FFF;
+        }
+        #conteudo {
+            width: 60%;
+            height: 100vh;
+            margin: 0 25% 0 25%;
+            background-color: rgb(125, 162, 173);
         }
     </style>
     <script>
@@ -52,6 +63,11 @@
             document.getElementById("caixaMenor").style.position="absolute";
             document.getElementById("caixaMenor").style.left=Math.random()*500 +"px";
             document.getElementById("caixaMenor").style.top=Math.random()*500 +"px";
+        }
+        //-------conseguiu clicar na div azul-------
+        function clicou() {
+            alert("Parabéns, você conseguiu");
+            location.reload();
         }
         //-------clica para liberar a movimentação da div azul-------
         function liberouMover() {
@@ -81,16 +97,19 @@
             document.getElementById("iniciarMover").addEventListener("click", liberouMover);
             document.getElementById("iniciarCor").addEventListener("click", iniciar);
             document.getElementById("pararCor").addEventListener("click", parar);
+            document.getElementById("caixaMenor").addEventListener("click", clicou);
         }
     </script>
 </head>
 <body onload="eventos()">
-    <div id='caixa'></div>
-    <div id="bola"></div>
-    <div id="caixaMenor"></div>
-    <button id="iniciarMover">Iniciar</button>
-    <div id="caixaDeCores"></div>
-    <button id="iniciarCor">Iniciar</button>
-    <button id="pararCor">Parar</button>
+    <section id="conteudo">
+        <div id='caixa'></div>
+        <div id="bola"></div>
+        <div id="caixaMenor"></div>
+        <button id="iniciarMover">Iniciar</button>
+        <div id="caixaDeCores"></div>
+        <button id="iniciarCor">Iniciar</button>
+        <button id="pararCor">Parar</button>
+    </section>
 </body>
 </html>
