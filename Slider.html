@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDER</title>
+    <style>
+        #slider{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 800px;
+            height: 300px;
+            border: solid black;
+        }
+    </style>
+    <script>
+        var imgs =[];
+
+        function povoarArrayImagens() {
+            var s=1
+            for (var i=0;i<5;i++) {
+                imgs[i]=new Image();
+                imgs[i].src="./imagens/s"+s+".png"; 
+                s++;
+            }
+        }
+
+        function carregarFoto(img) {
+            
+
+        }
+    </script>
+</head>
+<body>
+    <div id="slider"></div>
+</body>
+</html>
