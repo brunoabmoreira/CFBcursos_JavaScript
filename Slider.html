@@ -19,21 +19,32 @@
     </style>
     <script>
         var imgs =[];
+        var slider;
         var imagemAtual;
-
+        var maxImagem;
 
         function povoarArrayImagens() {
             var s=1
             for (var i=0;i<5;i++) {
                 imgs[i]=new Image();
-                imgs[i].src="./imagens/s"+s+".png"; 
+                imgs[i].src="imagens/s"+s+".png"; 
                 s++;
             }
         }
 
-        function carregarFoto(img) {
-            
+        function carregarImg(img) {
+            slider = document.getElementById("slider");
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
         }
+
+        function iniciar() {
+            povoarArrayImagens();
+            imagemAtual = 0;
+            maxImagem = imgs.length-1;
+        }
+        window.addEventListener("load", iniciar);
+
+        console.log(imgs.length);
     </script>
 </head>
 <body>
