@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setando Atributos</title>
+    <style>
+        #um {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            border: solid black;
+        }
+        #dois {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            border: solid black;
+        }
+        #tres {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+            border: solid black;
+        }
+        #carros {
+            width: 300px;
+            height: 300px;
+            background-repeat: no-repeat;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .c1 {
+            background-color: blue;
+        }
+
+        .c2 {
+            background-color: red;
+        }
+
+        .c3 {
+            background-color: yellow;
+        }
+        .c4 {
+            background-color: white;
+        }
+
+    </style>
+    <script>
+        function trocaCor1() {
+            document.getElementById("um").setAttribute("class", "c1");
+        }
+        function trocaCor2() {
+            document.getElementById("dois").setAttribute("class", "c2");
+        }
+        function trocaCor3() {
+            document.getElementById("tres").setAttribute("class", "c3");
+        }
+        function reset() {
+            document.getElementById("um").removeAttribute("class");
+            document.getElementById("dois").removeAttribute("class");
+            document.getElementById("tres").removeAttribute("class");
+        }
+        function trocaCarro(c) {
+            if (c==1) {
+                document.getElementById("carros").style.backgroundImage="url(./imagens/carro1.png)";
+                document.getElementById("carros").style.backgroundRepeat="no-repeat";
+            } else if (c==2) {
+                document.getElementById("carros").style.backgroundImage="url(./imagens/carro2.png)";
+                document.getElementById("carros").style.backgroundRepeat="no-repeat";
+            } else if (c==3) {
+                document.getElementById("carros").style.backgroundImage="url(./imagens/carro3.png)";
+                document.getElementById("carros").style.backgroundRepeat="no-repeat";
+            } else if (c==4) {
+                document.getElementById("carros").style.backgroundImage="url(./imagens/carro4.png)";
+                document.getElementById("carros").style.backgroundRepeat="no-repeat";
+            } else if (c==5) {
+                document.getElementById("carros").style.backgroundImage="url(./imagens/carro5.png)";
+                document.getElementById("carros").style.backgroundRepeat="no-repeat";
+            }
+        }
+        function resetCarro() {
+            document.getElementById("carros").style.backgroundImage="none"
+        }
+        function iniciar() {
+            document.getElementById("botao1").addEventListener("click", trocaCor1);
+            document.getElementById("botao2").addEventListener("click", trocaCor2);
+            document.getElementById("botao3").addEventListener("click", trocaCor3);
+            document.getElementById("carro").addEventListener("click", trocaCarro);
+            document.getElementById("reset").addEventListener("click", reset);
+            document.getElementById("resetarcarro").addEventListener("click", resetCarro);
+        }
+        window.addEventListener("load", iniciar);
+    </script>
+</head>
+<body>
+    <div id="um"></div>
+    <div id="dois"></div>
+    <div id="tres"></div>
+    <button id="botao1">Troca 1</button>
+    <button id="botao2">troca 2</button>
+    <button id="botao3">troca 3</button>
+    <button id="reset">reset all</button>
+
+    <div id="carros"></div>
+    <button id="carro" onclick="trocaCarro(1)">Carro 1</button>
+    <button id="carro" onclick="trocaCarro(2)">Carro 2</button>
+    <button id="carro" onclick="trocaCarro(3)">Carro 3</button>
+    <button id="carro" onclick="trocaCarro(4)">Carro 4</button>
+    <button id="carro" onclick="trocaCarro(5)">Carro 5</button>
+    <button id="resetarcarro" onclick="resetCarro">Limpar</button>
+
+</body>
+</html>
