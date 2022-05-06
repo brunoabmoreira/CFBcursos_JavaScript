@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca Teste</title>
+    <style>
+        #tabela {
+            border-collapse: collapse;
+        }
+        #teste {
+            width: 50px;
+            height: 50px;
+        }
+        .cabeca {
+            background-image: url("./imagens/cabeca.png");
+            background-repeat: no-repeat;
+        }
+        .tronco1 {
+            background-image: url("./imagens/tronco1.png");
+            background-repeat: no-repeat;
+        }
+        .tronco2 {
+            background-image: url("./imagens/tronco2.png");
+            background-repeat: no-repeat;
+        }
+        .braco1 {
+            background-image: url("./imagens/braco1.png");
+            background-repeat: no-repeat;
+        }
+        .braco2 {
+            background-image: url("./imagens/braco2.png");
+            background-repeat: no-repeat;
+        }
+        .perna1 {
+            background-image: url("./imagens/perna1.png");
+            background-repeat: no-repeat;
+        }
+        .perna2 {
+            background-image: url("./imagens/perna2.png");
+            background-repeat: no-repeat;
+        }
+        .trave {
+            background-image: url("./imagens/trave.png");
+            background-repeat: no-repeat;
+        }
+        .poste {
+            background-image: url("./imagens/poste.png");
+            background-repeat: no-repeat;
+        }
+        .corda {
+            background-image: url("./imagens/corda.png");
+            background-repeat: no-repeat;
+        }
+        .postetrave {
+            background-image: url("./imagens/postetrave.png");
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script>
+        var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça"];
+        var palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
+        var l1 = document.getElementById("1").innerHTML.palavraSorteada[1];
+
+    </script>
+</head>
+<body>
+    <table id="tabela">
+        <tbody>
+            <tr>
+                <td id="teste" class="postetrave"></td>
+                <td id="teste" class="trave"></td>
+                <td id="teste" class="trave"></td>
+                <td id="teste" class="corda"></td>
+                <td id="teste"></td>
+            </tr>
+            <tr>
+                <td id="teste" class="poste"></td>
+                <td id="teste"></td>
+                <td id="teste"></td>
+                <td id="teste" class="cabeca"></td>
+                <td id="teste"></td>
+            </tr>
+            <tr>
+                <td id="teste" class="poste"></td>
+                <td id="teste"></td>
+                <td id="teste" class="braco1"></td>
+                <td id="teste" class="tronco1"></td>
+                <td id="teste" class="braco2"></td>
+            </tr>
+            <tr>
+                <td id="teste" class="poste"></td>
+                <td id="teste"></td>
+                <td id="teste"></td>
+                <td id="teste" class="tronco2"></td>
+                <td id="teste"></td>
+            </tr>
+            <tr>
+                <td id="teste" class="poste"></td>
+                <td id="teste"></td>
+                <td id="teste" class="perna1"></td>
+                <td id="teste"></td>
+                <td id="teste" class="perna2"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="palavraSecreta">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+    </div>
+</body>
+</html>
