@@ -16,30 +16,37 @@
         .cabeca {
             background-image: url("./imagens/cabeca.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .tronco1 {
             background-image: url("./imagens/tronco1.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .tronco2 {
             background-image: url("./imagens/tronco2.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .braco1 {
             background-image: url("./imagens/braco1.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .braco2 {
             background-image: url("./imagens/braco2.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .perna1 {
             background-image: url("./imagens/perna1.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .perna2 {
             background-image: url("./imagens/perna2.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .trave {
             background-image: url("./imagens/trave.png");
@@ -52,18 +59,39 @@
         .corda {
             background-image: url("./imagens/corda.png");
             background-repeat: no-repeat;
+            display: none;
         }
         .postetrave {
             background-image: url("./imagens/postetrave.png");
             background-repeat: no-repeat;
         }
+        .display {
+            width: 50px;
+            height: 50px;
+            border: solid black;
+            display: inline-block;
+            text-align: center;
+            font-size: 35px;
+        }
+        #um {
+            color: white;
+        }
+        #dois {
+            color: white;
+        }
+        #tres {
+            color: white;
+        }
+        #quatro {
+            color: white;
+        }
+        #cinco {
+            color: white;
+        }
+        #seis {
+            color: white;
+        }
     </style>
-    <script>
-        var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça"];
-        var palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
-        var l1 = document.getElementById("1").innerHTML.palavraSorteada[1];
-
-    </script>
 </head>
 <body>
     <table id="tabela">
@@ -107,12 +135,83 @@
     </table>
 
     <div id="palavraSecreta">
-        <div id="1"></div>
-        <div id="2"></div>
-        <div id="3"></div>
-        <div id="4"></div>
-        <div id="5"></div>
-        <div id="6"></div>
+        <div id="um" class="display"></div>
+        <div id="dois" class="display"></div>
+        <div id="tres" class="display"></div>
+        <div id="quatro" class="display"></div>
+        <div id="cinco" class="display"></div>
+        <div id="seis" class="display"></div>
     </div>
+    <div>
+        <input type="text" placeholder="Informe uma letra de A a Z" id="resposta">
+        <button id="verificar" onclick="verificador()">Verificar!</button>
+    </div>   
+
+    <script>
+        var pn = 0;
+        var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça"];
+        var palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
+        var letraUm = palavraSorteada[0];
+        document.getElementById("um").innerHTML = letraUm;
+        var letraDois = palavraSorteada[1];
+        document.getElementById("dois").innerHTML = letraDois;
+        var letraTres = palavraSorteada[2];
+        document.getElementById("tres").innerHTML = letraTres;
+        var letraQuatro = palavraSorteada[3];
+        document.getElementById("quatro").innerHTML = letraQuatro;
+        var letraCinco = palavraSorteada[4];
+        document.getElementById("cinco").innerHTML = letraCinco;
+        var letraSeis = palavraSorteada[5];
+        document.getElementById("seis").innerHTML = letraSeis;
+
+        if (letraSeis == undefined) {
+            document.getElementById("seis").style.display = "none"; 
+        }
+        if (letraCinco == undefined) {
+            document.getElementById("cinco").style.display = "none";
+        }
+
+        function boneco() {
+            if (pn >=1) {
+                document.getElementsByClassName("cabeca").style.display = "block";
+            }
+            if (pn >=2) {
+                document.getElementsByClassName("tronco1").style.display = "block";
+            }
+        }
+
+        function verificador() {
+            var resposta = document.getElementById("resposta").value;
+
+            if (resposta == letraUm) {
+                document.getElementById("um").style.color = "#000";
+            }
+            if (resposta == letraDois) {
+                document.getElementById("dois").style.color = "#000";
+            }
+            if (resposta == letraTres) {
+                document.getElementById("tres").style.color = "#000";
+            }
+            if (resposta == letraQuatro) {
+                document.getElementById("quatro").style.color = "#000";
+            }
+            if (resposta == letraCinco) {
+                document.getElementById("cinco").style.color = "#000";
+            }
+            if (resposta == letraSeis) {
+                document.getElementById("seis").style.color = "#000";
+            } 
+            if (resposta != letraUm & resposta != letraDois & resposta != letraTres & resposta != letraQuatro & resposta != letraCinco) {
+                alert("Você errou, tente outra letra");
+                pn++;
+                console.log(pn);
+                boneco();
+            }
+        }
+        
+        
+        
+    </script>
+
 </body>
 </html>
