@@ -172,11 +172,13 @@
         }
 
         function boneco() {
+            console.log("na função boneco" + pn);
+            console.log(document.getElementsByClassName("tronco1"));
             if (pn >=1) {
-                document.getElementsByClassName("cabeca").style.display = "block";
+                document.getElementsByClassName("corda")[0].style.display = "block";
             }
             if (pn >=2) {
-                document.getElementsByClassName("tronco1").style.display = "block";
+                document.getElementsByClassName("cabeca")[0].style.display = "block";
             }
         }
 
