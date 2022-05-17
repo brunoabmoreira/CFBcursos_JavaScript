@@ -149,6 +149,7 @@
 
     <script>
         var pn = 0;
+        var pv = 0;
         var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça"];
         var palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
         var letraUm = palavraSorteada[0];
@@ -180,6 +181,24 @@
             if (pn >=2) {
                 document.getElementsByClassName("cabeca")[0].style.display = "block";
             }
+            if (pn >=3) {
+                document.getElementsByClassName("tronco1")[0].style.display = "block";
+            }
+            if (pn >=4) {
+                document.getElementsByClassName("tronco2")[0].style.display = "block";
+            }
+            if (pn >=5) {
+                document.getElementsByClassName("braco1")[0].style.display = "block";
+            }
+            if (pn >=6) {
+                document.getElementsByClassName("braco2")[0].style.display = "block";
+            }
+            if (pn >=7) {
+                document.getElementsByClassName("perna1")[0].style.display = "block";
+            }
+            if (pn >=8) {
+                document.getElementsByClassName("perna2")[0].style.display = "block";
+            }
         }
 
         function verificador() {
@@ -187,31 +206,57 @@
 
             if (resposta == letraUm) {
                 document.getElementById("um").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             }
             if (resposta == letraDois) {
                 document.getElementById("dois").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             }
             if (resposta == letraTres) {
                 document.getElementById("tres").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             }
             if (resposta == letraQuatro) {
                 document.getElementById("quatro").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             }
             if (resposta == letraCinco) {
                 document.getElementById("cinco").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             }
             if (resposta == letraSeis) {
                 document.getElementById("seis").style.color = "#000";
+                pv++;
+                console.log("valor de pv é: " + pv);
+                vitoria();
             } 
             if (resposta != letraUm & resposta != letraDois & resposta != letraTres & resposta != letraQuatro & resposta != letraCinco) {
                 alert("Você errou, tente outra letra");
                 pn++;
-                console.log(pn);
                 boneco();
+                derrota();
             }
         }
-        
-        
+        function vitoria() {
+            if (pv >= palavraSorteada.length) {
+                alert("Parabéns, você é um féra do gás!!");
+            }
+        }
+        function derrota() {
+            if (pn == 8) {
+                alert("voce foi enforcado!!");
+            }
+        }        
         
     </script>
 
