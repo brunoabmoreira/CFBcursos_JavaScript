@@ -13,40 +13,45 @@
             width: 50px;
             height: 50px;
         }
+        .corda {
+            background-image: url("./imagens/corda.png");
+            background-repeat: no-repeat;
+            visibility: collapse;
+        }
         .cabeca {
             background-image: url("./imagens/cabeca.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .tronco1 {
             background-image: url("./imagens/tronco1.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .tronco2 {
             background-image: url("./imagens/tronco2.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .braco1 {
             background-image: url("./imagens/braco1.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .braco2 {
             background-image: url("./imagens/braco2.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .perna1 {
             background-image: url("./imagens/perna1.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .perna2 {
             background-image: url("./imagens/perna2.png");
             background-repeat: no-repeat;
-            display: none;
+            visibility: collapse;
         }
         .trave {
             background-image: url("./imagens/trave.png");
@@ -56,11 +61,7 @@
             background-image: url("./imagens/poste.png");
             background-repeat: no-repeat;
         }
-        .corda {
-            background-image: url("./imagens/corda.png");
-            background-repeat: no-repeat;
-            display: none;
-        }
+      
         .postetrave {
             background-image: url("./imagens/postetrave.png");
             background-repeat: no-repeat;
@@ -150,7 +151,8 @@
     <script>
         var pn = 0;
         var pv = 0;
-        var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça"];
+        var palavras = ["maria", "casa", "texto", "bola", "caneta", "balde", "fumaça", "cabelo", "barba", "chefe", "batman", "riacho", "flor", 
+    "marte", "arma", "bombom", "carne", "frango", "cavalo", "bolsa"];
         var palavraSorteada = palavras[Math.floor(Math.random() * palavras.length)];
         var letraUm = palavraSorteada[0];
         document.getElementById("um").innerHTML = letraUm;
@@ -176,33 +178,33 @@
             console.log("na função boneco" + pn);
             console.log(document.getElementsByClassName("tronco1"));
             if (pn >=1) {
-                document.getElementsByClassName("corda")[0].style.display = "block";
+                document.getElementsByClassName("corda")[0].style.visibility = "visible";
             }
             if (pn >=2) {
-                document.getElementsByClassName("cabeca")[0].style.display = "block";
+                document.getElementsByClassName("cabeca")[0].style.visibility = "visible";
             }
             if (pn >=3) {
-                document.getElementsByClassName("tronco1")[0].style.display = "block";
+                document.getElementsByClassName("tronco1")[0].style.visibility = "visible";
             }
             if (pn >=4) {
-                document.getElementsByClassName("tronco2")[0].style.display = "block";
+                document.getElementsByClassName("tronco2")[0].style.visibility = "visible";
             }
             if (pn >=5) {
-                document.getElementsByClassName("braco1")[0].style.display = "block";
+                document.getElementsByClassName("braco1")[0].style.visibility = "visible";
             }
             if (pn >=6) {
-                document.getElementsByClassName("braco2")[0].style.display = "block";
+                document.getElementsByClassName("braco2")[0].style.visibility = "visible";
             }
             if (pn >=7) {
-                document.getElementsByClassName("perna1")[0].style.display = "block";
+                document.getElementsByClassName("perna1")[0].style.visibility = "visible";
             }
             if (pn >=8) {
-                document.getElementsByClassName("perna2")[0].style.display = "block";
+                document.getElementsByClassName("perna2")[0].style.visibility = "visible";
             }
         }
 
         function verificador() {
-            var resposta = document.getElementById("resposta").value;
+            var resposta = document.getElementById("resposta").value.toLowerCase();
 
             if (resposta == letraUm) {
                 document.getElementById("um").style.color = "#000";
@@ -249,12 +251,12 @@
         }
         function vitoria() {
             if (pv >= palavraSorteada.length) {
-                alert("Parabéns, você é um féra do gás!!");
+                alert("Parabéns, você venceu o jogo!!");
             }
         }
         function derrota() {
             if (pn == 8) {
-                alert("voce foi enforcado!!");
+                alert("Voce foi enforcado!!");
             }
         }        
         
